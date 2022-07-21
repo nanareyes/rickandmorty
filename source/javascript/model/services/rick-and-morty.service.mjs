@@ -1,3 +1,5 @@
+//import { UserModel } from "../user.model.mjs";
+
 export class RickAndMortyService {
     #privateUrl;
 
@@ -8,5 +10,6 @@ export class RickAndMortyService {
     getCharacters() {
         return fetch(`${this.#privateUrl}/character`).then(response => response.json());
     }
+
 
 }

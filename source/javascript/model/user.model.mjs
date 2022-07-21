@@ -1,31 +1,49 @@
-'use strict';
+"use strict";
 
 export class UserModel {
-    #privateName;
-    #privateLastname;
 
-    constructor() {
-        this.#privateName = '';
-        this.#privateLastname = '';
-    }
+  #name;
+  #image;
+  #gender;
+  #species;
 
-    get Name() {
-        return this.#privateName;
-    }
+  constructor(name, image, gender, species) {
+    this.#name = name;
+    this.#image = image;
+    this.#gender = gender;
+    this.#species = species;
+  }
 
-    set Name(name) {
-        this.#privateName = name;
-    }
+  getName() {
+    return this.#name;
+  }
 
-    get Lastname() {
-        return this.#privateLastname;
-    }
+  getGender() {
+    return this.#gender;
+  }
 
-    set Lastname(lastname) {
-        this.#privateLastname = lastname;
-    }
+  getSpecies() {
+    return this.#species;
+  }
+  getImage() {
+    return this.#image;
+  }
 
-    toString() {
-        return `${this.#privateName} ${this.#privateLastname}`;
-    }
+  setName(name) {
+    this.#name = name;
+  }
+
+  setGender(gender) {
+    this.#gender = gender;
+  }
+  setImage(image) {
+    this.#image = image;
+  }
+  setGender(species) {
+    this.#species = species;
+  }
+
+  toString() {
+    return `${this.#name} ${this.#image}${this.#gender}${this.#species}`;
+  }
 }
