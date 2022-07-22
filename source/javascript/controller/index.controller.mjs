@@ -37,9 +37,10 @@ class IndexController {
     //   console.log("data",data);
     // }
 
-    const data = await service.getCharacters(service);
+    const data = await service.getCharacters();
     const dataRickAndMorty = data.results.map((character) => {
       return new UserModel(
+        character.id,
         character.name,
         character.image,
         character.species,
@@ -49,6 +50,7 @@ class IndexController {
     console.log(dataRickAndMorty)
     this.#privateView.showCharacters(dataRickAndMorty);
   }
+
 }
 
 export const index = new IndexController();

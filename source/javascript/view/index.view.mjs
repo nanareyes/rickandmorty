@@ -35,6 +35,9 @@ export class IndexView {
     const button = Utils.createButton();
     button.classList.add("btn", "btn-primary")
     button.textContent= "more information"
+    button.addEventListener("click", ()=>{
+      window.location.href = `character.html?id=${character.getId()}`
+    });
     body.append(title, gender,species)
     card.append(img,body, button)
 
@@ -47,11 +50,9 @@ export class IndexView {
     // const image = document.createElement("img");
     // image.src = `${character.getImage()}`;
     // const gender = document.createElement("div");
-
     // gender.textContent = `${character.getGender()}`;
     // const species = document.createElement("div");
     // species.innerHTML = `${character.getSpecies()}`;
-    
     // card.appendChild(gender);
     // card.appendChild(species);
     // card.appendChild(image);

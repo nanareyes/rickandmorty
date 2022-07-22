@@ -1,19 +1,27 @@
 "use strict";
 
 export class UserModel {
-
+  #id;
   #name;
   #image;
   #gender;
   #species;
+  #status;
+  #origin;
+  #location;
+  #episode;
 
-  constructor(name, image, gender, species) {
+  constructor(id, name, image, gender, species) {
+    this.#id = id;
     this.#name = name;
     this.#image = image;
     this.#gender = gender;
     this.#species = species;
   }
 
+  getId() {
+    return this.#id;
+  }
   getName() {
     return this.#name;
   }
@@ -25,10 +33,25 @@ export class UserModel {
   getSpecies() {
     return this.#species;
   }
+  getLocation() {
+    return this.#location;
+  }
+  getStatus() {
+    return this.#status;
+  }
+  getOrigin() {
+    return this.#origin;
+  }
+  getEpisode() {
+    return this.#episode;
+  }
   getImage() {
     return this.#image;
   }
 
+  setId(id) {
+    this.#id = id;
+  }
   setName(name) {
     this.#name = name;
   }
@@ -39,11 +62,26 @@ export class UserModel {
   setImage(image) {
     this.#image = image;
   }
-  setGender(species) {
+  setSpecies(species) {
     this.#species = species;
+  }
+  setLocation(location) {
+    this.#location = location;
+  }
+  setStatus(status) {
+    this.#status = status;
+  }
+  setOrigin(origin) {
+    this.#origin = origin;
+  }
+  setOrigin(origin) {
+    this.#origin = origin;
+  }
+  setEpisode(episode) {
+    this.#episode = episode;
   }
 
   toString() {
-    return `${this.#name} ${this.#image}${this.#gender}${this.#species}`;
+    return `${this.#id} ${this.#name}${this.#image}${this.#gender}${this.#species}`;
   }
 }

@@ -10,6 +10,9 @@ export class RickAndMortyService {
     getCharacters() {
         return fetch(`${this.#privateUrl}/character`).then(response => response.json());
     }
+    getCharacter(id) {
+        return fetch(`${this.#privateUrl}/character/${id}`).then(response => response.json());
+    }
 
 
 }
